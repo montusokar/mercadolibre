@@ -1,0 +1,80 @@
+$font-stack:    Helvetica, sans-serif;
+$background-color: #f9f9f9;
+
+.PreviewContainer {
+  display: flex;
+  align-content: center;
+  height: 200px;
+  width: 800px;
+  margin: 10px;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.ImagePreviewContainer {
+  width: 200px;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+}
+
+.ImagePreview {
+  width: 150px;
+  height: 150px;
+  vertical-align: center;
+}
+
+.DetailsPreviewContainer {
+  padding: 10px;
+  display: grid;
+  align-content: center;
+}
+
+.ItemPrice{
+  display: flex;
+  height: 30px;
+  margin-bottom: 10px;
+}
+
+.ItemPriceText{
+  display: flex;
+  height: 30px;
+  margin-bottom: 10px;
+  font-weight: lighter;
+}
+
+.ItemTitle {
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+  width: 600px;
+  height: 30px;
+  margin-bottom: 10px;
+}
+
+.ItemCondition {
+  margin: 0;
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.ItemFreeShipping {
+  margin: 0;
+  font-size: 12px;
+  font-weight: bold;
+  color: rgb(7, 122, 7);
+}
+
+.ItemConditions {
+  height: 40px;
+}
+
+.Currency{
+  margin-left: 5px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 12px;
+  line-height: 2;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}

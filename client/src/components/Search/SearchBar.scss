@@ -1,0 +1,73 @@
+$font-stack: Helvetica, sans-serif;
+$background-color: #f9f9f9;
+
+.Header {
+  background-color: #fff159;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Container {
+  max-width: 1200px;
+  flex: 1;
+  justify-items: center;
+  justify-content: center;
+  align-self: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.LogoNavigator {
+  display: grid;
+  align-content: center;
+}
+
+.SearchBar {
+  background-color: white;
+  border-radius: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  max-width: 700px;
+  width: 700px;
+}
+
+.SearchInput {
+  height: 30px;
+  max-width: 600px;
+  width: 600px;
+  font-family: $font-stack;
+  margin-left: 10px;
+  margin-right: 10px;
+  outline: 0px !important;
+  border: none;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.SearchInput::placeholder{
+  color: rgba(0,0,0,.25);
+  font-size: 16px;
+  font-weight: 400;
+  visibility: visible;
+}
+
+.IconButton {
+  height: 30px;
+  width: 30px;
+  outline: 0px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  border: none;
+}
+
+.Icon {
+  background-color: white;
+  align-self: center;
+  vertical-align: center;
+}

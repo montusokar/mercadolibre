@@ -1,5 +1,6 @@
 import React from 'react';
 import 'react-activity/dist/react-activity.css';
+import './Home.scss'
 
 import {
     Switch,
@@ -15,7 +16,7 @@ import ItemDetail from '../Item/ItemDetail'
 function Home() {
 
     return (
-        <div className="App">
+        <div className="body-class">
             <Router>
                 <header className="header">
                     <SearchBar />

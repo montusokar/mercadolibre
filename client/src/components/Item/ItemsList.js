@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ItemPreview from './ItemPreview'
+import './ItemsList.scss'
 
 import { Dots } from 'react-activity';
 import axios from 'axios';
@@ -26,7 +27,7 @@ const ItemsList = () => {
     }, [location, setData, setIsLoading]);
 
     return (
-        <div >
+        <div className="Results">
             {isLoading ? <Dots /> : <div>
                 <CategoriesBreadcrumb categories={data.categories} />
                 {data.items ? data.items.map(item => {

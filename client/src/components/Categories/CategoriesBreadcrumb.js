@@ -1,25 +1,21 @@
 import React from 'react';
+import './CategoriesBreadcrumb.scss'
 
 const CategoriesBreadcrumb = ({ categories, ...props }) => {
     if (categories) {
         return (
-            <li style={{ display: 'flex', marginRight: 15 }} className='breadcrumb-item' {...props}>
-                {categories.map(category => {
-                    return (
-                        <div>
-                            <a
-                                style={{
-                                    color: 'gray',
-                                    textDecoration: 'none'
-                                }}
-                                href={category.id}>{category.name}</a>
-                        </div>)
-                })
-                }
-            </li>
+            <div className="BreadCrumb">
+                <ul class="collapsed">
+                    {categories.map(category => {
+                        return (
+                            <li><a href={category.id}>{category.name}</a></li>
+                        )
+                    })
+                    }
+                </ul>
+            </div>
         )
     } else { return null }
-
 }
 
 export default CategoriesBreadcrumb;
