@@ -1,13 +1,14 @@
 const fetch = require('node-fetch');
 var categoriesService = require('./categoriesService')
+const config = require('config');
 
 const author = {
     name: "Gabriel",
     lastname: "Quijada"
 }
 
-const searchUrl = "https://api.mercadolibre.com/sites/MLA/search?q=";
-const itemUrl = "https://api.mercadolibre.com/items/";
+const searchUrl = config.get('api.url') + config.get('api.resources.search') + "?q=";
+const itemUrl = config.get('api.url') + config.get('api.resources.items');
 
 module.exports = {
 

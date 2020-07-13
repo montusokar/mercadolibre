@@ -1,6 +1,6 @@
 const fetch = require('node-fetch');
 
-const url = "https://api.mercadolibre.com/categories/";
+const url = config.get('api.url') + config.get('api.resources.categories');
 
 module.exports = {
     getCategory: async function (categoryId) {
