@@ -2,17 +2,12 @@ const fetch = require('node-fetch');
 var categoriesService = require('./categoriesService')
 const config = require('config');
 
-const author = {
-    name: "Gabriel",
-    lastname: "Quijada"
-}
-
 const searchUrl = config.get('api.url') + config.get('api.resources.search') + "?q=";
 const itemUrl = config.get('api.url') + config.get('api.resources.items');
 
 module.exports = {
 
-    searchItems: async function (query, limit) {
+    searchItems: async function (query, limit, author) {
         try {
             var url = searchUrl + query;
             if (limit && limit > 0) url += "&limit=" + limit;
@@ -30,7 +25,7 @@ module.exports = {
             throw Error('Error while retrieving results')
         }
     },
-    searchItem: async function (itemId) {
+    searchItem: async function (itemId, author) {
         try {
  
             const itemResponse = await fetch(itemUrl + itemId);

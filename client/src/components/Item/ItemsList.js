@@ -11,6 +11,8 @@ import CategoriesBreadcrumb from '../Categories/CategoriesBreadcrumb'
 import { Helmet } from "react-helmet";
 
 const ItemsList = () => {
+    
+    const url = process.env.REACT_APP_SEARCH_URL;
     let location = useLocation();
     const [isLoading, setIsLoading] = useState(false);
     const [data, setData] = useState({});
@@ -18,14 +20,20 @@ const ItemsList = () => {
     useEffect(() => {
         setIsLoading(true);
         const fetchData = async () => {
-            const result = await axios(
-                'http://localhost:9000/api/items' + location.search,
+            const result = await axios.get(
+                url + location.search,
+                {
+                    headers: {
+                        first: 'Gabriel',
+                        last: 'Quijada'
+                    }
+                }
             );
             setData(result.data);
         };
         fetchData();
         setIsLoading(false);
-    }, [location, setData, setIsLoading]);
+    }, [location, setData, setIsLoading, url]);
 
     console.log(data)
     return (

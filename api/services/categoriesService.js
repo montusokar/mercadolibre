@@ -1,4 +1,5 @@
 const fetch = require('node-fetch');
+const config = require('config');
 
 const url = config.get('api.url') + config.get('api.resources.categories');
 

@@ -15,13 +15,21 @@ function ItemDetail() {
     var { itemId } = useParams();
     const [isLoading, setIsLoading] = useState(false);
     const [data, setData] = useState({});
+    const url = process.env.REACT_APP_ITEM_URL;
 
     useEffect(() => {
         if (!data.item || data.item.id !== itemId) {
             setIsLoading(true);
+            console.log( url +  itemId)
             const fetchData = async () => {
-                const result = await axios(
-                    'http://localhost:9000/api/items/' + itemId,
+                const result = await axios.get(
+                    url +  itemId,
+                     {
+                        headers: {
+                          first: 'Gabriel',
+                          last: 'Quijada'
+                        }
+                    }
                 );
 
                 setData(result.data);
@@ -29,7 +37,7 @@ function ItemDetail() {
             fetchData();
             setIsLoading(false);
         }
-    }, [data, itemId, setData, setIsLoading]);
+    }, [data, itemId, setData, setIsLoading, url]);
 
     if (!isLoading && data.item) {
         let { item } = data;
