@@ -1,0 +1,149 @@
+$font-stack:    Helvetica, sans-serif;
+$background-color: #f9f9f9;
+
+.LoadingContainer {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.ItemDetailContainer {
+  display: grid;
+  justify-content: center;
+}
+
+.ItemContainer {
+  background-color: white;
+  width: 1000px;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+.ItemImageConditions{
+  display: flex;
+  justify-content: center;
+}
+
+.ItemDescription {
+  display: grid;
+  padding: 20px;
+  text-align: justify;
+}
+
+.ItemConditionsContainer {
+  width: 280px;
+  margin-top: 40px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.ItemDetailImageContainer {
+  width: 700px;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+
+.ImageContainer {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.ItemDetailImage {
+  width: 400px;
+  height: 400px;
+  margin-top: 20px;
+}
+
+.DetailsPreviewContainer {
+  padding: 10px;
+  display: grid;
+  align-content: center;
+}
+
+.ItemPriceDetail{
+  display: flex;
+  margin: 0px;
+  margin-bottom: 10px;
+}
+
+.ItemPriceTextDetail{
+  font-weight: bold;
+  font-size: 40px;
+  margin: 0px;
+}
+
+.Currency{
+  margin-left: 5px;
+  text-transform: uppercase;
+  display: flex;
+  height: 30px;
+  margin-bottom: 10px;
+  font-weight: lighter;
+}
+
+.ItemTitle {
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+  width: 260px;
+  max-width: 260px;
+  overflow-wrap: break-word;
+  margin-bottom: 20px;
+}
+
+.ItemTitle:hover {
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+  width: 260px;
+  max-width: 260px;
+  overflow-wrap: break-word;
+  margin-bottom: 20px;
+}
+
+.ItemCondition {
+  margin: 0;
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.ItemFreeShipping {
+  margin: 0;
+  font-size: 12px;
+  font-weight: bold;
+  color: rgb(7, 122, 7);
+}
+
+.ItemConditions {
+  height: 40px;
+}
+
+
+.BuyButton {
+	box-shadow:inset 0px 1px 0px 0px #54a3f7;
+	background:linear-gradient(to bottom, #007dc1 5%, #0061a7 100%);
+	background-color:#007dc1;
+	border-radius:3px;
+	border:1px solid #124d77;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-size:13px;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #154682;
+}
+.BuyButton:hover {
+	background:linear-gradient(to bottom, #0061a7 5%, #007dc1 100%);
+	background-color:#0061a7;
+}
+.BuyButton:active {
+	position:relative;
+	top:1px;
+}
+
+        
+

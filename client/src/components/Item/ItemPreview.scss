@@ -52,6 +52,15 @@ $background-color: #f9f9f9;
   margin-bottom: 10px;
 }
 
+.ItemTitle:hover {
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+  width: 600px;
+  height: 30px;
+  margin-bottom: 10px;
+}
+
 .ItemCondition {
   margin: 0;
   font-size: 12px;
@@ -72,9 +81,8 @@ $background-color: #f9f9f9;
 .Currency{
   margin-left: 5px;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: 12px;
-  line-height: 2;
-  font-weight: normal;
-  text-rendering: optimizeLegibility;
+  display: flex;
+  height: 30px;
+  margin-bottom: 10px;
+  font-weight: lighter;
 }

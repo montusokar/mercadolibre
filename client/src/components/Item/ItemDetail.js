@@ -2,10 +2,12 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Sentry } from 'react-activity';
 import 'react-activity/dist/react-activity.css';
+import './ItemDetail.scss'
 
 import {
     useParams
 } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 import CategoriesBreadcrumb from '../Categories/CategoriesBreadcrumb'
 
@@ -29,49 +31,69 @@ function ItemDetail() {
         }
     }, [data, itemId, setData, setIsLoading]);
 
-    console.log(data);
-    if (data.item) {
-        let {item} = data; 
-        return (<div style={{display: 'grid', justifyContent: 'center'}}>
-            <CategoriesBreadcrumb categories={data.item.categories} />
-            <div style={{display: 'flex', backgroundColor: 'white', width: 800}}>
-            <div>
-                    <img
-                        src={item.picture}
-                        alt="new"
-                        style={{ width: 100 }}
-                    />
-                </div>
+    if (!isLoading && data.item) {
+        let { item } = data;
+        return (
+            <div className="ItemDetailContainer">
+                <Helmet htmlAttributes>
+                    <html lang="en" />
+                    <title>Mercadolibre: {item.title}</title>
+                    <meta name="description" content={item.description} />
+                </Helmet>
                 <div>
-                    <div style={{ display: 'flex' }}>
-                        <p>$</p>
-                        <p>{item.price.amount}</p>
-                        {item.price.decimals > 0 ? <p>,{item.price.decimals}</p> : null}
-                        <p> {item.price.currency}</p>
+                    <CategoriesBreadcrumb categories={data.item.categories} />
+                    <div className="ItemContainer">
+                        <div className="ItemImageConditions">
+                            <div className="ItemDetailImageContainer">
+                                <div className="ImageContainer">
+                                    <img
+                                        src={item.picture}
+                                        alt="item"
+                                        resizeMode='cover'
+                                        className="ItemDetailImage"
+                                    />
+                                </div>
+                                <div className="ItemDescription">
+                                    <p> Description del Producto:</p>
+                                    <p> {item.description}</p>
+                                </div>
+                            </div>
+                            <div className="ItemConditionsContainer">
+
+
+                                <p className="ItemTitle"
+                                >{item.title}
+                                </p>
+
+                                <div className="ItemPriceDetail">
+                                    <p className="ItemPriceTextDetail">$</p>
+                                    <p className="ItemPriceTextDetail">{item.price.amount}</p>
+                                    {item.price.decimals > 0 ? <p className="ItemPriceTextDetail">,{item.price.decimals}</p> : null}
+                                    <p className="Currency">{"  " + item.price.currency}</p>
+                                </div>
+
+                                <div className="ItemConditions">
+                                    <p className="ItemCondition"> Condición: {item.condition === 'new' ? 'nuevo' : item.condition === 'used' ? 'usado' : item.condition}</p>
+                                    {item.free_shipping ? <p className="ItemFreeShipping">Envío gratis</p> : null}
+                                    <p className="ItemCondition"> Unidades vendidas: {item.sold_quantity}</p>
+                                </div>
+
+                                <a href="#" class="BuyButton">Comprar</a>
+
+                            </div>
+                        </div>
+
                     </div>
-
-                    <a style={{
-                        color: 'black',
-                        fontWeight: 'bold',
-                        textDecoration: 'none'
-                    }}
-
-                        href={item.id} >{item.title}</a>
-                    <p> Condition: {item.condition}</p>
-                    <p> Free Shipping: {String(item.free_shipping)}</p>
-                    <p> Unidades vendidas: {item.sold_quantity}</p>
-                    <p> Description del Producto:</p>
-                    <p> {item.description}</p>
                 </div>
-
-            </div>
-        </div>);
+            </div>);
     } else {
-        return (<div>
+        return (<div className="LoadingContainer">
             <Sentry color="#727981" size={20} speed={0.7} animating={true} />
         </div>);
     }
 
 }
+
+
 
 export default ItemDetail;

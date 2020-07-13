@@ -48,7 +48,7 @@ module.exports = {
                 price: {
                     currency: itemJson.currency_id,
                     amount: Math.floor(itemJson.price),
-                    decimals: Math.round((itemJson.price % 1) * 100) / 100,
+                    decimals: Math.round((itemJson.price % 1) * 100),
                 },
                 picture: itemJson.thumbnail,
                 condition: itemJson.condition,

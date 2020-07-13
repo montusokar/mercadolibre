@@ -1,12 +1,11 @@
 import React from 'react';
-import history from '../../browser/history'
 import './ItemPreview.scss'
+import { Link } from "react-router-dom";
 
 const ItemPreview = ({ item, ...props }) => {
-    console.log(item);
     if (item) {
         return (
-            <div onClick={(event) => history.push('/items/' + item.id)} className="PreviewContainer">
+            <div className="PreviewContainer">
                 <div className="ImagePreviewContainer">
                     <img
                         src={item.picture}
@@ -23,9 +22,11 @@ const ItemPreview = ({ item, ...props }) => {
                         <p className="Currency">{"  " + item.price.currency}</p>
                     </div>
 
-                    <a className="ItemTitle"
-                        href={item.id} >{item.title}
-                    </a>
+                    <Link to={{
+                        pathname: '/items/' + item.id,
+                        }}>
+                        <p className="ItemTitle">{item.title}</p>
+                    </Link>
 
                     <div className="ItemConditions">
                         <p className="ItemCondition"> Condición: {item.condition === 'new' ? 'nuevo' : item.condition === 'used' ? 'usado' : item.condition}</p>
