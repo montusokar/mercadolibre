@@ -28,7 +28,7 @@ function SearchBar() {
 
     return (<div className='Header' >
         <div className='Container'>
-            <a className="LogoNavigator" href="//www.mercadolibre.cl">
+            <a className="LogoNavigator" href="/">
                 <img src='https://http2.mlstatic.com/frontend-assets/ui-navigation/5.7.0/mercadolibre/logo__large_plus.png' alt='mercadolibre' />
             </a>
             <form onSubmit={(event) => handleSubmit(event)} className="SearchBar">

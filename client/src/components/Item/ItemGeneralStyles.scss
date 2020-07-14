@@ -1,0 +1,22 @@
+.NotFoundContainer{
+    display: grid;
+    text-align: center;
+    width: 800px;
+    justify-content: center;
+  }
+  
+  .NotFoundImage{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    opacity: 0.7;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+  }
+  
+  .NotFoundText {
+    font-family: "Proxima Nova",-apple-system,"Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+  }
+  

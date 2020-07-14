@@ -5,10 +5,10 @@ const CategoriesBreadcrumb = ({ categories, ...props }) => {
     if (categories) {
         return (
             <div className="BreadCrumb">
-                <ul class="collapsed">
+                <ul className="collapsed">
                     {categories.map(category => {
                         return (
-                            <li><a href={category.id}>{category.name}</a></li>
+                            <li key={category.id}><a href={category.id}>{category.name}</a></li>
                         )
                     })
                     }

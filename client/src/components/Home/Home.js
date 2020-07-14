@@ -18,11 +18,11 @@ function Home() {
 
     return (
         <div className="body-class">
-            <Helmet htmlAttributes>
+            <Helmet>
                     <html lang="en" />
                     <title>Mercadolibre</title>
                     <meta name="description" content="Democratizando el comercio." />
-                </Helmet>
+            </Helmet>
             <Router>
                 <header className="header">
                     <SearchBar />

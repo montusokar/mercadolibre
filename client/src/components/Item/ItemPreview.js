@@ -5,13 +5,12 @@ import { Link } from "react-router-dom";
 const ItemPreview = ({ item, ...props }) => {
     if (item) {
         return (
-            <div className="PreviewContainer">
+            <div className="PreviewContainer" key={"ItemPreview" + item.id}>
                 <div className="ImagePreviewContainer">
                     <img
                         src={item.picture}
                         alt="item"
                         className="ImagePreview"
-                        resizeMode='cover'
                     />
                 </div>
                 <div className="DetailsPreviewContainer">
